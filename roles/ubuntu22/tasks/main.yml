@@ -5,9 +5,9 @@
 
 - name: Create a virtual machine a vCenter
   community.vmware.vmware_guest:
-    hostname: "{{ host }}"
-    username: "{{ username }}"
-    password: "{{ password }}"
+    hostname: "{{ vmware.host }}"
+    username: "{{ vmware.username }}"
+    password: "{{ vmware.password }}"
     cluster: "{{ cluster_name }}"
     folder: "{{ folder_path }}"
     name: "{{ vm_name }}"
