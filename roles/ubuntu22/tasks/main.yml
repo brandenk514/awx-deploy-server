@@ -1,4 +1,8 @@
 ---
+- name: debug vars
+  debug:
+    var: vmware
+
 - name: Create a virtual machine a vCenter
   community.vmware.vmware_guest:
     hostname: "{{ host }}"
