@@ -14,9 +14,9 @@
       - type: thin
       - datastore: "{{ datastore_name }}"
     hardware:
-      - memory_mb: 4096
-      - num_cpus: 2
-      - scsi: paravirtual
+      memory_mb: 4096
+      num_cpus: 2
+      scsi: paravirtual
     networks:
       - name: "{{ network_name }}"
       - ip: "{{ ipv4_addr }}"
