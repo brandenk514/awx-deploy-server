@@ -1,7 +1,7 @@
 ---
 - name: Create a virtual machine on given ESXi hostname
   community.vmware.vmware_guest:
-    hostname: "{{ ansilbe_vcenter_hostname }}"
+    hostname: "{{ ansible_vcenter_hostname }}"
     username: "{{ ansible_vcenter_username }}"
     password: "{{ ansible_vcenter_password }}"
     cluster: "{{ cluster_name }}"
