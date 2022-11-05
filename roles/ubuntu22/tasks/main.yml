@@ -19,13 +19,15 @@
       memory_mb: 4096
       num_cpus: 2
       scsi: paravirtual
-    networks:
-      - name: "{{ network_name }}"
-        ip: "{{ ipv4_addr }}"
-        netmask: 255.255.255.0
-        device_type: vmxnet3
-        connected: true
-    wait_for_ip_address: true
-    wait_for_ip_address_timeout: 600
   delegate_to: localhost
   register: deployed_vm
+
+- name: Remove a virtual machine from inventory
+  community.vmware.vmware_guest:
+    hostname: "{{ vmware.host }}"
+    username: "{{ vmware.username }}"
+    password: "{{ vmware.password }}"
+    name: "{{ vm_name }}"
+    delete_from_inventory: true
+    state: absent
+  delegate_to: localhost
