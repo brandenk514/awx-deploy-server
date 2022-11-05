@@ -23,7 +23,7 @@
   register: deployed_vm
 
 - name: "Sleep for 30 seconds"
-  ansible.builtin.pause module:
+  ansible.builtin.pause:
     seconds: 30
 
 - name: Remove a virtual machine from inventory
