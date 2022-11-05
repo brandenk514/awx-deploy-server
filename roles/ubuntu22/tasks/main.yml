@@ -12,8 +12,7 @@
     state: poweredon
     guest_id: ubuntu64Guest
     disk:
-      - size: "gb"
-      - size_gb: 64
+      - size: "64gb"
       - type: thin
       - datastore: "{{ datastore_name }}"
     hardware:
