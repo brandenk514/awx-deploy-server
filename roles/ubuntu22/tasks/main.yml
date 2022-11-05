@@ -11,6 +11,7 @@
     datastore: "{{ datastore_name }}"
     state: present
     guest_id: ubuntu64Guest
+    template: "{{ template_path }}"
     disk:
       - size_gb: 64
         type: thin
@@ -19,8 +20,24 @@
       memory_mb: 4096
       num_cpus: 2
       scsi: paravirtual
+    networks:
+      - name: "Server (13)"
+        type: "dhcp"
+        device_type: vmxnet3
+        connected: true
+    wait_for_ip_address: true
+    wait_for_ip_address_timeout: 180
+    customization:
+      hostname: "{{ vm_name }}"
+      domain: "{{ guest_domain }}"
+      dns_servers:
+        - "{{ guest_dns_server1 }}"
+        - "{{ guest_dns_server2 }}"
+      dns_suffix:
+        - "{{ guest_domain_name1 }}"
+        - "{{ guest_domain_name2 }}"
+      timezone: "America/Los_Angeles"
   delegate_to: localhost
-  register: deployed_vm
 
 - name: "Sleep for 30 seconds"
   ansible.builtin.pause:
