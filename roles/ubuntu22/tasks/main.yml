@@ -9,21 +9,22 @@
     name: "{{ vm_name }}"
     datacenter: "{{ datacenter_name }}"
     datastore: "{{ datastore_name }}"
-    state: poweredon
+    state: present
     guest_id: ubuntu64Guest
     disk:
-      - size: "64gb"
-      - type: thin
-      - datastore: "{{ datastore_name }}"
+      - size_gb: 64
+        type: thin
+        datastore: "{{ datastore_name }}"
     hardware:
       memory_mb: 4096
       num_cpus: 2
       scsi: paravirtual
     networks:
       - name: "{{ network_name }}"
-      - ip: "{{ ipv4_addr }}"
-      - netmask: 255.255.255.0
-      - device_type: vmxnet3
+        ip: "{{ ipv4_addr }}"
+        netmask: 255.255.255.0
+        device_type: vmxnet3
+        connected: true
     wait_for_ip_address: true
     wait_for_ip_address_timeout: 600
   delegate_to: localhost
