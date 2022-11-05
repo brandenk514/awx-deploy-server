@@ -22,6 +22,10 @@
   delegate_to: localhost
   register: deployed_vm
 
+- name: "Sleep for 30 seconds"
+  ansible.builtin.pause module:
+    seconds: 30
+
 - name: Remove a virtual machine from inventory
   community.vmware.vmware_guest:
     hostname: "{{ vmware.host }}"
