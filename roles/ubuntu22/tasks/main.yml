@@ -49,6 +49,6 @@
     username: "{{ vmware.username }}"
     password: "{{ vmware.password }}"
     name: "{{ vm_name }}"
-    delete_from_inventory: true
+    delete_from_inventory: false
     state: absent
   delegate_to: localhost
