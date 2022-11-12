@@ -4,7 +4,7 @@
     hostname: "{{ vmware.host }}"
     username: "{{ vmware.username }}"
     password: "{{ vmware.password }}"
-    name: "{{ vm_name }}"
+    name: "{{ ansible_hostname }}"
     state: poweredoff
   delegate_to: localhost
 
@@ -13,7 +13,7 @@
     hostname: "{{ vmware.host }}"
     username: "{{ vmware.username }}"
     password: "{{ vmware.password }}"
-    name: "{{ vm_name }}"
+    name: "{{ ansible_hostname }}"
     delete_from_inventory: false
     state: absent
   delegate_to: localhost
