@@ -1,5 +1,5 @@
 # awx-deploy-server
-For deploying servers via AWX and VMware vCenter
+For deploying and destroying servers via AWX and VMware vCenter
 
 # Prerequisites 
 To get started with this repo, you'll need the following:
