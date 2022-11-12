@@ -38,26 +38,3 @@
         - "{{ guest_domain_name2 }}"
       timezone: "America/Los_Angeles"
   delegate_to: localhost
-
-- name: "Sleep for 30 seconds"
-  ansible.builtin.pause:
-    seconds: 30
-
-- name: Set powerstate of a virtual machine to poweroff by using UUID
-  community.vmware.vmware_guest:
-    hostname: "{{ vmware.host }}"
-    username: "{{ vmware.username }}"
-    password: "{{ vmware.password }}"
-    name: "{{ vm_name }}"
-    state: poweredoff
-  delegate_to: localhost
-
-- name: Remove a virtual machine from inventory
-  community.vmware.vmware_guest:
-    hostname: "{{ vmware.host }}"
-    username: "{{ vmware.username }}"
-    password: "{{ vmware.password }}"
-    name: "{{ vm_name }}"
-    delete_from_inventory: false
-    state: absent
-  delegate_to: localhost
