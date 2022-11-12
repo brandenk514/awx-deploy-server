@@ -16,3 +16,15 @@ To get started with this repo, you'll need the following:
 4) Create a Template and choose **Job Type** of `run` then select for inventory and project from the dropdowns. Set your playbook as well. You can set your execution environment if you want, but it shouldn't be required. 
 5) In the template, set your credentials to the vCenter ones you made eariler.
 6) Under **Variables**, you can enter the following variables, but most likely you will need to customize these to your environment
+    - cluster_name
+    - folder_path
+    - vm_name
+    - datastore_name
+    - datacenter_name
+    - network_name
+    - template
+    - guest_domain
+    - guest_dns_server1
+    - guest_dns_server2
+    - guest_domain_name1
+    - guest_domain_name2

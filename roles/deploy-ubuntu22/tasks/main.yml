@@ -11,7 +11,7 @@
     datastore: "{{ datastore_name }}"
     state: present
     guest_id: ubuntu64Guest
-    template: "{{ template_path }}"
+    template: "{{ template }}"
     disk:
       - size_gb: 64
         type: thin
